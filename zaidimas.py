@@ -1,5 +1,5 @@
 # žaidimo lenta.
-
+from bendravimas_su_zaidejais import *
 lenta_sk = ["1","2","3",
             "4","5","6",
             "7","8","9"]
