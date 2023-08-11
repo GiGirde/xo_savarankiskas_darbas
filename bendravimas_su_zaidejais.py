@@ -1,5 +1,5 @@
 # čia yra bendravimas su žaidėju
-
+from zaidimas import lenta
 
 print("Sveiki! Čia yra žaidimas XO!")
 print("--------------------------------")
@@ -16,6 +16,6 @@ if sutikimas.lower() == "taip":
     print("ŽAIDIMASD PRASIDEDA")
     print("************************************")
 
-    # lenta()
+    lenta()
 else:
     print("labai gaila")
