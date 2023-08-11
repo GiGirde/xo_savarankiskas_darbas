@@ -11,7 +11,13 @@ def lenta ():
 
 lenta()
 
+dabar_žaidžia = "x"
+laimėtojas = None
+žaidimas_tęsesi = True
+
 def ar_laimėjo():
+    global laimėtojas
+    global žaidimas_tęsesi
 
 if lenta_sk[0] == lenta_sk[2] == lenta_sk[3] or\
     lenta_sk[0] == lenta_sk[4] == lenta_sk[8] or\
@@ -21,3 +27,5 @@ if lenta_sk[0] == lenta_sk[2] == lenta_sk[3] or\
     lenta_sk[0] == lenta_sk[3] == lenta_sk[6] or\
     lenta_sk[1] == lenta_sk[4] == lenta_sk[7] or\
     lenta_sk[2] == lenta_sk[5] == lenta_sk[8]:
+    laimėtojas = dabar_zaidzia
+    žaidimas_tęsesi = False
