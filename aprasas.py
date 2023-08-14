@@ -9,3 +9,4 @@
 # Kad žaidimas skaičiuotų abiejų žaidėjų sesijos laimėjimus.
 # Leistų žaisti prieš kompiuterį (sukurti logiką, kaip jis elgsis)
 # Padaryti GUI (su tkinter, pygame, dar kažkuo)
+
