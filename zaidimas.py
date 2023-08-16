@@ -59,13 +59,16 @@ def ar_laimėjo():
         laimėtojas = "Lygiosios"
         žaidimas_tęsesi = False
 
+laimėjimų_skaicius = {'X': 0, 'O': 0}
 
 def skelbti_laimėtoją():
     global laimėtojas, x_žaidėjas, o_žaidėjas
     if laimėtojas == "X":
         print(f"Laimėjo žaidėjas X ({x_žaidėjas})!")
+        laimėjimų_skaicius['X'] += 1
     elif laimėtojas == "O":
         print(f"Laimėjo žaidėjas O ({o_žaidėjas})!")
+        laimėjimų_skaicius['O'] += 1
     else:
         print("Lygiosios!")
 
@@ -92,6 +95,9 @@ def pakartoti_žaidimą():
             žaisti()
         elif pasirinkimas.lower() == "ne":
             print(f"Ačiū,{x_žaidėjas} ir {o_žaidėjas}, kad žaidėte!\nIki kitų kartų!")
+            print("Jūsų rezultatas yra:")
+            for zaidejas, laimėjimai in laimėjimų_skaicius.items():
+                print(f"{zaidejas}: {laimėjimai} laimėjimai")
             break
         else:
             print("Netinkamas pasirinkimas. Pasirinkite 'taip' arba 'ne'.")
