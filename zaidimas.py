@@ -1,7 +1,31 @@
-# žaidimo lenta.
 from bendravimas_su_zaidejais import *
+
 x_žaidėjas = ""
 o_žaidėjas = ""
+def žaisti1():
+    global lenta_sk, x_žaidėjas, o_žaidėjas
+    print("Sveiki! Čia yra žaidimas XO!")
+    print("--------------------------------")
+
+    x_žaidėjas = input("Žaidėjas X - Prisistatykite: ")
+    o_žaidėjas = input("Žaidėjas O - Prisistatykite: ")
+
+    print("--------------------------------")
+    print(f"Malonu, {x_žaidėjas} ir {o_žaidėjas} susipažinti")
+    print("--------------------------------")
+
+    sutikimas= input("Ar norite pradėti žaidimą? pasirinkite 'taip' arba 'ne'")
+    print("************************************")
+
+    if sutikimas.lower() == "taip":
+        print("ŽAIDIMASD PRASIDEDA")
+        print("************************************")
+
+        žaisti()
+        pakartoti_žaidimą()
+    else:
+        print("Labai gaila, galbūt kitą kartą!")
+
 
 lenta_sk = ["1","2","3",
             "4","5","6",
@@ -31,9 +55,10 @@ def ar_laimėjo():
        lenta_sk[2] == lenta_sk[4] == lenta_sk[6]:
         laimėtojas = dabar_žaidžia
         žaidimas_tęsesi = False
-    elif all(cell == "X" or cell == "O" for cell in lenta_sk):
+    elif all(langelis == "X" or langelis == "O" for langelis in lenta_sk):
         laimėtojas = "Lygiosios"
         žaidimas_tęsesi = False
+
 
 def skelbti_laimėtoją():
     global laimėtojas, x_žaidėjas, o_žaidėjas
@@ -59,12 +84,14 @@ def pakartoti_žaidimą():
         pasirinkimas = input("Ar norite žaisti iš naujo? (taip/ne): ")
         if pasirinkimas.lower() == "taip":
             global lenta_sk, laimėtojas, žaidimas_tęsesi
-            lenta_sk = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+            lenta_sk = ["1", "2", "3",
+                        "4", "5", "6",
+                        "7", "8", "9"]
             laimėtojas = None
             žaidimas_tęsesi = True
             žaisti()
         elif pasirinkimas.lower() == "ne":
-            print("Ačiū, kad žaidėte!")
+            print(f"Ačiū,{x_žaidėjas} ir {o_žaidėjas}, kad žaidėte!\nIki kitų kartų!")
             break
         else:
             print("Netinkamas pasirinkimas. Pasirinkite 'taip' arba 'ne'.")
@@ -83,10 +110,6 @@ def pasirinkti_vieta():
         else:
           print("Jūsų pasirinkimas yra netinkamas. Pasirinkite laisvą skaičių nuo 1 iki 9.")
           print("...................")
-          # print("                  ")
-
-
 
 if __name__ == "__main__":
     žaisti1()
-    # skelbti_laimėtoją()
