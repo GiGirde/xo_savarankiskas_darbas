@@ -7,8 +7,9 @@ def žaisti1():
     print("Sveiki! Čia yra žaidimas XO!")
     print("--------------------------------")
 
-    x_žaidėjas = (input("Žaidėjas X - Prisistatykite: "))
-    o_žaidėjas = (input("Žaidėjas O - Prisistatykite: "))
+    x_žaidėjas = input("Žaidėjas X - Prisistatykite: ")
+    o_žaidėjas = input("Žaidėjas O - Prisistatykite: ")
+
     print("--------------------------------")
     print(f"Malonu, {x_žaidėjas} ir {o_žaidėjas} susipažinti")
     print("--------------------------------")
@@ -21,8 +22,9 @@ def žaisti1():
         print("************************************")
 
         žaisti()
+        pakartoti_žaidimą()
     else:
-        print("labai gaila")
+        print("Labai gaila, galbūt kitą kartą!")
 
 
 

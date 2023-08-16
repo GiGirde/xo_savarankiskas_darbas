@@ -51,22 +51,35 @@ def žaisti():
     lenta()
     skelbti_laimėtoją()
 
+def pakartoti_žaidimą():
+    while True:
+        pasirinkimas = input("Ar norite žaisti iš naujo? (taip/ne): ")
+        match pasirinkimas.lower():
+            case "taip":
+                žaisti()
+            case "ne":
+                print("Ačiū, kad žaidėte!")
+                break
+            case _:
+                print("Netinkamas pasirinkimas. Pasirinkite 'taip' arba 'ne'.")
+
 def pasirinkti_vieta():
     global laimėtojas
     while True:
         pasirinkta_vieta = input(f"Žaidėjas {dabar_žaidžia}, pasirinkite langelį (1-9): ")
         if pasirinkta_vieta.isdigit() and 1 <= int(pasirinkta_vieta) <= 9:
             pasirinkta_vieta = int(pasirinkta_vieta) - 1
-        # else:
-            # print("jūsų pasirinkimas būtinai turi būti laisvas skaičius nuo 1 iki 9, bandykite dar kartą!")
             if lenta_sk[pasirinkta_vieta] == "X" or lenta_sk[pasirinkta_vieta] == "O":
                 print("Šis langelis jau užimtas. Bandykite dar kartą.")
             else:
                 lenta_sk[pasirinkta_vieta] = dabar_žaidžia
                 ar_laimėjo()
             break
-    else:
-        print("Netinkamas pasirinkimas. Pasirinkite skaičių nuo 1 iki 9.")
+        else:
+          print("Jūsų pasirinkimas yra netinkamas. Pasirinkite laisvą skaičių nuo 1 iki 9.")
+          print("...................")
+          # print("                  ")
+
 
 
 if __name__ == "__main__":
