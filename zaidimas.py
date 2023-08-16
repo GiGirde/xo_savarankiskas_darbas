@@ -31,6 +31,9 @@ def ar_laimėjo():
        lenta_sk[2] == lenta_sk[4] == lenta_sk[6]:
         laimėtojas = dabar_žaidžia
         žaidimas_tęsesi = False
+    elif all(cell == "X" or cell == "O" for cell in lenta_sk):
+        laimėtojas = "Lygiosios"
+        žaidimas_tęsesi = False
 
 def skelbti_laimėtoją():
     global laimėtojas, x_žaidėjas, o_žaidėjas
@@ -54,15 +57,17 @@ def žaisti():
 def pakartoti_žaidimą():
     while True:
         pasirinkimas = input("Ar norite žaisti iš naujo? (taip/ne): ")
-        match pasirinkimas.lower():
-            case "taip":
-                žaisti()
-            case "ne":
-                print("Ačiū, kad žaidėte!")
-                break
-            case _:
-                print("Netinkamas pasirinkimas. Pasirinkite 'taip' arba 'ne'.")
-
+        if pasirinkimas.lower() == "taip":
+            global lenta_sk, laimėtojas, žaidimas_tęsesi
+            lenta_sk = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+            laimėtojas = None
+            žaidimas_tęsesi = True
+            žaisti()
+        elif pasirinkimas.lower() == "ne":
+            print("Ačiū, kad žaidėte!")
+            break
+        else:
+            print("Netinkamas pasirinkimas. Pasirinkite 'taip' arba 'ne'.")
 def pasirinkti_vieta():
     global laimėtojas
     while True:
