@@ -25,6 +25,6 @@ from zaidimas import *
 #     else:
 #         print("Labai gaila, galbūt kitą kartą!")
 
-
-if __name__ == "__main__":
-    žaisti1()
+#
+# if __name__ == "__main__":
+#     žaisti1()

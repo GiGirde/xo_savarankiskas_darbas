@@ -21,7 +21,6 @@ def žaisti1():
     print("************************************")
 
     if sutikimas.lower() == "taip":
-        time.sleep(1)
         print("ŽAIDIMASD PRASIDEDA")
         print("************************************")
         time.sleep(1)
@@ -112,10 +111,10 @@ def pakartoti_žaidimą():
             žaidimas_tęsesi = True
             žaisti()
         elif pasirinkimas.lower() == "ne":
-            time.sleep(1)
             print("")
             print(f"Ačiū,{x_žaidėjas} ir {o_žaidėjas}, kad žaidėte!\nIki kitų kartų!")
             print("--------------------------------")
+            time.sleep(1)
             print("Jūsų rezultatas yra:")
             for žaidėjas, laimėjimai in laimėjimų_skaicius.items():
                 print(f"{žaidėjas}: {laimėjimai} laimėjimai")
