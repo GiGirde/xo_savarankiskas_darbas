@@ -21,7 +21,7 @@ def žaisti1():
     print("************************************")
 
     if sutikimas.lower() == "taip":
-        print("ŽAIDIMASD PRASIDEDA")
+        print("❗ŽAIDIMASD PRASIDEDA❗")
         print("************************************")
         time.sleep(1)
         žaisti()
@@ -73,12 +73,12 @@ def skelbti_laimėtoją():
     global laimėtojas, x_žaidėjas, o_žaidėjas
     if laimėtojas == "X":
         print("")
-        print(f"Laimėjo žaidėjas X ({x_žaidėjas})!")
+        print(f"🏆 Laimėjo žaidėjas X ({x_žaidėjas})!")
         print("")
         laimėjimų_skaicius['X'] += 1
     elif laimėtojas == "O":
         print("")
-        print(f"Laimėjo žaidėjas O ({o_žaidėjas})!")
+        print(f"🏆 Laimėjo žaidėjas O ({o_žaidėjas})!")
         print("")
         laimėjimų_skaicius['O'] += 1
     else:
@@ -114,8 +114,8 @@ def pakartoti_žaidimą():
             print("")
             print(f"Ačiū,{x_žaidėjas} ir {o_žaidėjas}, kad žaidėte!\nIki kitų kartų!")
             print("--------------------------------")
-            time.sleep(1)
             print("Jūsų rezultatas yra:")
+            print("   🏆🏆🏆🏆🏆   ")
             for žaidėjas, laimėjimai in laimėjimų_skaicius.items():
                 print(f"{žaidėjas}: {laimėjimai} laimėjimai")
 
