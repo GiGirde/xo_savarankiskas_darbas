@@ -17,7 +17,7 @@ def žaisti1():
     time.sleep(1)
     print("--------------------------------")
 
-    sutikimas = input("Ar norite pradėti žaidimą? pasirinkite 'taip' arba 'ne'")
+    sutikimas = input("Ar norite pradėti žaidimą? pasirinkite  (taip/ne): ")
     print("************************************")
 
     if sutikimas.lower() == "taip":
